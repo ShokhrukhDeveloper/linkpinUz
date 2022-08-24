@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
           children:  [
             SvgPicture.asset("assets/svg_icons/ic_app.svg"),
 
-            const Text("Welcome to LinkPin!",
+            const Text("1brokhim's here!",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 40.0,
