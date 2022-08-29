@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:likpinuz/app/routes/app_routes.dart';
 import 'package:likpinuz/presentation/pages/login_page/widgets/AppSignInButton.dart';
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -27,7 +29,7 @@ class _LoginState extends State<Login> {
           children:  [
             SvgPicture.asset("assets/svg_icons/ic_app.svg"),
 
-            const Text("1brokhim's here!",
+            const Text("Welcome to Linkpin!!!",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 40.0,
@@ -114,7 +116,13 @@ class _LoginState extends State<Login> {
               ],
             ),
             const SizedBox(height: 25,),
-            SignInButton()
+            InkWell(
+                child: const SignInButton(),
+              onTap: (){
+                  Get.snackbar("Success Logged", "Password correctly");
+                  Get.toNamed(AppRoutes.home);
+              },
+            )
 
 
 
