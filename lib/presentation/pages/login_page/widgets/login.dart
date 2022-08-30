@@ -28,7 +28,6 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
             SvgPicture.asset("assets/svg_icons/ic_app.svg"),
-
             const Text("Welcome to Linkpin!!!",
               style: TextStyle(
                 color: Colors.black,
