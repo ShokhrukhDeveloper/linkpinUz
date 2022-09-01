@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:likpinuz/app/config/app_colors.dart';
+import 'package:likpinuz/app/config/AppTextStyle.dart';
 class CustomTextField extends StatelessWidget {
    const CustomTextField({
      Key? key,
-     required this.controller,
-     required this.onChange,
-     required this.onSubmit,
-     required this.hintText,
-     required this.fieldText,
+      this.controller,
+      this.onChange,
+      this.onSubmit,
+      this.hintText,
+      this.fieldText,
      this.contentPadding, this.textAlign, this.maxLines}) : super(key: key);
-  final TextEditingController controller;
-  final Function(String onChange) onChange;
-  final Function() onSubmit;
-  final String hintText;
-  final String fieldText;
+  final TextEditingController? controller;
+  final Function(String onChange)? onChange;
+  final Function()? onSubmit;
+  final String? hintText;
+  final String? fieldText;
   final  EdgeInsetsGeometry? contentPadding;
   final TextAlign? textAlign;
   final int? maxLines;
@@ -21,17 +21,13 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350,
+      width: 400,
       child: Column(
         children: [
            Align(
              alignment: Alignment.centerLeft,
-             child: Text(fieldText,
-              style: const TextStyle(
-                color: AppColor.colorTextField,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-              ),
+             child: Text(fieldText??'',
+              style:AppTextStyle.style7A7878_20w800,
              textAlign: TextAlign.left,
              ),
            ),

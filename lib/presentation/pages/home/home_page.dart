@@ -12,22 +12,20 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("profile_page page"),),
-      body: Container(
-        child:Row(
-          children:  [
-             RightNavigationBar(pageController: controller,),
-            Expanded(
-              child: PageView(
-                controller: controller,
-                children: const [
-                  ProfilePage(),
-                  SettingPage(),
-                  MyProjectsPage()
-                ],
-              ),
-            )
-          ],
-        ),
+      body: Row(
+        children:  [
+           RightNavigationBar(pageController: controller,),
+          Expanded(
+            child: PageView(
+              controller: controller,
+              children: const [
+                ProfilePage(),
+                SettingPage(),
+                MyProjectsPage()
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.5
   cached_network_image: ^3.2.0
   seo_renderer: ^0.6.0
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
