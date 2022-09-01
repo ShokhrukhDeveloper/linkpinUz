@@ -5,6 +5,7 @@ import 'package:likpinuz/app/config/AppTextStyle.dart';
 import 'package:likpinuz/app/config/app_colors.dart';
 
 import '../../../widgets/SkillAddFormField.dart';
+import '../../../widgets/removie_button.dart';
 class SkillWidget extends StatefulWidget {
   const SkillWidget({Key? key}) : super(key: key);
 
@@ -54,9 +55,9 @@ class _SkillWidgetState extends State<SkillWidget> {
                   Expanded(child: Text(e,
                     overflow: TextOverflow.ellipsis,
                   )),
-                  InkWell(
+                  ButtonRemovie(
                       onTap: (){skills.remove(e);setState(() {});},
-                      child: SvgPicture.asset("assets/svg_icons/ic_delete.svg"))
+                      ),
                 ],
               )),
             ) ).toList()

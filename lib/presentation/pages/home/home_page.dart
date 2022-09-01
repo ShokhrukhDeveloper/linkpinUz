@@ -4,6 +4,7 @@ import 'package:likpinuz/presentation/pages/setting_page/setting_page.dart';
 import 'package:likpinuz/presentation/widgets/left_navigation_bar/RightNavigationBar.dart';
 
 import '../profile_page/profile_page.dart';
+import '../social_networks_page/social_networks_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -18,10 +19,10 @@ class HomePage extends StatelessWidget {
           Expanded(
             child: PageView(
               controller: controller,
-              children: const [
-                ProfilePage(),
-                SettingPage(),
-                MyProjectsPage()
+              children:  [
+                const ProfilePage(),
+                SocialNetworksPage(),
+                const MyProjectsPage()
               ],
             ),
           )

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:likpinuz/presentation/pages/profile_page/widgets/EducationWidget.dart';
 import 'package:likpinuz/presentation/pages/profile_page/widgets/SkillWidget.dart';
 import 'package:likpinuz/presentation/widgets/CustomButton.dart';
+import 'package:likpinuz/presentation/widgets/btn_add_item.dart';
 import 'package:likpinuz/presentation/widgets/custom_text_field.dart';
 import 'widgets/LanguageWidget.dart';
 import 'widgets/work_experienece.dart';
@@ -26,9 +27,21 @@ class _ProfilePageState extends State<ProfilePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children:  [
-          const CircleAvatar(
-            radius: 150,
-            backgroundImage: CachedNetworkImageProvider("https://picsum.photos/200/300"),
+          SizedBox(
+            width: 300,
+            child: Stack(
+              children: const [
+                CircleAvatar(
+                  radius: 150,
+                  backgroundImage: CachedNetworkImageProvider("https://picsum.photos/200/300"),
+                ),
+                Positioned(
+                  bottom: 0,
+                right: 0,
+                child: ButtonAddItem(),
+                )
+              ],
+            ),
           ),
           const SizedBox(height:30 ,),
           CustomTextField(
@@ -74,6 +87,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           const LanguageWidget(),
           const SkillWidget(),
+          const SizedBox(height: 20,),
           const EducationWidget(),
           const SizedBox(height: 20,),
           CustomButton(text: "Save",onTap: (){

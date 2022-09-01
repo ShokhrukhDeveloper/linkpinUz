@@ -8,7 +8,7 @@ class CustomTextField extends StatelessWidget {
       this.onSubmit,
       this.hintText,
       this.fieldText,
-     this.contentPadding, this.textAlign, this.maxLines}) : super(key: key);
+     this.contentPadding, this.textAlign, this.maxLines, this.width}) : super(key: key);
   final TextEditingController? controller;
   final Function(String onChange)? onChange;
   final Function()? onSubmit;
@@ -17,11 +17,12 @@ class CustomTextField extends StatelessWidget {
   final  EdgeInsetsGeometry? contentPadding;
   final TextAlign? textAlign;
   final int? maxLines;
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 400,
+      width: width?? 400,
       child: Column(
         children: [
            Align(
@@ -32,12 +33,12 @@ class CustomTextField extends StatelessWidget {
              ),
            ),
           TextField(
+            controller: controller,
             maxLines: maxLines,
             textAlign: textAlign??TextAlign.start,
             decoration: InputDecoration(
               hintText: hintText,
               hintStyle: const TextStyle(fontSize: 15),
-
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.0),
                 borderSide: const BorderSide(color: Colors.black, width: 2.0),

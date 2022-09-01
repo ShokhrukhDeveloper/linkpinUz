@@ -6,6 +6,7 @@ class AppColor{
   static const colorTextField=Color(0xff7A7878);
   static const colorD9D9D9=Color(0xffD9D9D9);
   static const black=Colors.black;
+  static const red=Colors.redAccent;
 
 
 }
