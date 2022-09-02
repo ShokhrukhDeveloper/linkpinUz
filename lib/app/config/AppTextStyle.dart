@@ -46,6 +46,12 @@ class AppTextStyle{
        fontWeight: FontWeight.w700,
        color: Colors.white
    );
+   static const styleBlack6W700=  TextStyle(
+       letterSpacing: 3,
+       fontSize: 16,
+       fontWeight: FontWeight.w700,
+       color: Colors.black
+   );
   static const styleWhite32W400=  TextStyle(
       letterSpacing: 3,
       fontSize: 32,

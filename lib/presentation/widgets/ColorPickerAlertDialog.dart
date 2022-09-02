@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:likpinuz/presentation/widgets/CustomButton.dart';
+
+import '../pages/profile_page/widgets/CustomButtonCancel.dart';
 class ColorPickerWidget extends StatelessWidget {
    ColorPickerWidget({Key? key}) : super(key: key);
 static const List<Color> _colors=[
@@ -79,9 +82,18 @@ var col=Colors.white.obs;
                       ,
           ),
         ),
-          actions: [IconButton(onPressed: (){
-            Navigator.pop(context,col.value.value);
-          }, icon: const Icon(Icons.color_lens_outlined),)],
+          actionsAlignment: MainAxisAlignment.spaceBetween,
+          actions: [
+             CustomButtonCancel(text: "Cancel",onTap: (){
+              Navigator.pop(context);
+            },),
+
+            CustomButton(text: "OK",
+              onTap: (){
+                Navigator.pop(context,col.value.value);
+              },
+            ),
+          ],
       ),
     );
   }

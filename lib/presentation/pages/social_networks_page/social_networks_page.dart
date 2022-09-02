@@ -9,6 +9,7 @@ import 'package:likpinuz/presentation/widgets/btn_add_item.dart';
 import 'package:likpinuz/presentation/widgets/custom_text_field.dart';
 
 import '../../widgets/ColorPickerAlertDialog.dart';
+import '../../widgets/IconPickerW/AlertDialog.dart';
 import '../../widgets/SocialNetworkLinkWidget.dart';
 import '../../widgets/removie_button.dart';
 class SocialNetworksPage extends StatefulWidget {
@@ -20,7 +21,17 @@ class SocialNetworksPage extends StatefulWidget {
 
 class _SocialNetworksPageState extends State<SocialNetworksPage> {
 List<String> ls=[];
+Future<void> colorPick()async{
 
+    var result=await  showDialog(context: context, builder: (_)=>ColorPickerWidget());
+    if(result !=null)
+    {
+      color=Color(result);
+      setState(() {
+
+      });
+    }
+}
 final TextEditingController controller=TextEditingController();
 Color? color;
   @override
@@ -50,7 +61,7 @@ Color? color;
                 padding: const EdgeInsets.symmetric(vertical: 17,horizontal: 38),
                 width: 660,
                 decoration: BoxDecoration(
-                  color: color,
+                  // color: color,
                   border: Border.all(color: AppColor.black),
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -82,23 +93,21 @@ Color? color;
                         Row(
                           children: [
                             const SizedBox(width: 10,),
+                            ///Icons Button
                             ButtonAddItem(
                               onTap: () async {
-
+                                showDialog(context: context, builder: (_)=>IconPikerAlertDialogWidget());
                               },
                             ),
                             const SizedBox(width: 30,),
-                            ButtonColorPickerWidget(
-                              onTap: ()async {
-                              var result=await  showDialog(context: context, builder: (_)=>ColorPickerWidget());
-                              if(result !=null)
-                              {
-                              color=Color(result);
-                              setState(() {
-
-                              });
-                              }},
-                            ),
+                            /// Color Picker buttons
+                            if(color==null)ButtonColorPickerWidget(onTap: colorPick),
+                            if(color!=null)InkWell(
+                              onTap: colorPick,
+                              child: Container(
+                                width: 47,height: 47,
+                                decoration: BoxDecoration(color: color,borderRadius: BorderRadius.circular(24)),),
+                            )
                           ],
                           mainAxisAlignment: MainAxisAlignment.start,
                         ),
