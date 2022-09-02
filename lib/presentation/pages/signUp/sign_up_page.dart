@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
+import 'package:get/get.dart';
+import 'package:likpinuz/app/routes/app_routes.dart';
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -101,7 +101,9 @@ class _SignUpPageState extends State<SignUpPage> {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                  Get.toNamed(AppRoutes.home);
+                                  },
                                   child: const Text(
                                     "Continue",
                                     style: TextStyle(
@@ -147,7 +149,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      "assets/png_pictures/signUpBack.png",
+                      "png_pictures/signUpBack.png",
                     ),
                     fit: BoxFit.cover,
                   ),
