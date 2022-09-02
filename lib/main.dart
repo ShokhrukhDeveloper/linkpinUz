@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:likpinuz/app/routes/app_pages.dart';
 import 'package:likpinuz/routes/my_routes.dart';
@@ -21,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: "/signUp",
+      initialRoute: "/logIn",
       onGenerateRoute: routess.onGenerateRoute,
       debugShowCheckedModeBanner: false,
       // getPages: AppPages.pages,
