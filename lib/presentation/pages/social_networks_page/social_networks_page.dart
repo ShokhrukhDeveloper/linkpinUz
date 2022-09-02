@@ -9,7 +9,7 @@ import 'package:likpinuz/presentation/widgets/btn_add_item.dart';
 import 'package:likpinuz/presentation/widgets/custom_text_field.dart';
 
 import '../../widgets/ColorPickerAlertDialog.dart';
-import '../../widgets/IconPickerW/AlertDialog.dart';
+import '../../widgets/IconPickerW/IconPickerAlertDialog.dart';
 import '../../widgets/SocialNetworkLinkWidget.dart';
 import '../../widgets/removie_button.dart';
 class SocialNetworksPage extends StatefulWidget {
@@ -18,22 +18,46 @@ class SocialNetworksPage extends StatefulWidget {
   @override
   State<SocialNetworksPage> createState() => _SocialNetworksPageState();
 }
+class Link{
+  String? name;
+  int? colorCode;
+  String link='';
+  String iconAsset='';
 
+
+}
 class _SocialNetworksPageState extends State<SocialNetworksPage> {
-List<String> ls=[];
+List<Link?> ls=[];
+Link? likn=Link();
 Future<void> colorPick()async{
 
     var result=await  showDialog(context: context, builder: (_)=>ColorPickerWidget());
     if(result !=null)
     {
+      likn?.colorCode=result;
       color=Color(result);
       setState(() {
 
       });
     }
 }
+Future<void> iconPick()async{
+
+  var result=await showDialog(context: context, builder: (_)=>IconPikerAlertDialogWidget());
+  if(result!=null)
+  {
+    likn?.iconAsset=result;
+    asset=result;
+    debugPrint(asset);
+    setState(() {
+
+    });
+  }
+}
+
 final TextEditingController controller=TextEditingController();
 Color? color;
+String? asset;
   @override
   Widget build(BuildContext context) {
     return Container(padding: const EdgeInsets.only(top: 40),
@@ -47,7 +71,7 @@ Color? color;
 
               ...ls.map<Widget>((e) =>Stack(
                 children: [
-                  SocialNetworkLinkWidget(name: e.tr,link: '',),
+                  SocialNetworkLinkWidget(name: e?.name??'',link: e?.link??'',colorCode: e?.colorCode,asset: e?.iconAsset,),
                   Positioned(
                     right: 5,
                     bottom: 3,
@@ -95,9 +119,10 @@ Color? color;
                             const SizedBox(width: 10,),
                             ///Icons Button
                             ButtonAddItem(
-                              onTap: () async {
-                                showDialog(context: context, builder: (_)=>IconPikerAlertDialogWidget());
-                              },
+                              height: 60,
+                              width: 60,
+                              asset: asset,
+                              onTap: iconPick,
                             ),
                             const SizedBox(width: 30,),
                             /// Color Picker buttons
@@ -114,10 +139,19 @@ Color? color;
                         CustomButton(text: "Create",
                         onTap: (){
                           debugPrint(controller.text+"============");
+
                           if(controller.text.length>2){
                             debugPrint(controller.text);
-                            ls.add(controller.text);
+                            likn?.name=controller.text;
+                            ls.add(likn);
+                            debugPrint(controller.text+"============");
+                            debugPrint(controller.text+"============");
                             setState(() {});
+                            asset=null;
+                            color=null;
+
+                           var d=Link();
+                           likn=d;
                           }
                         },
                         ),
