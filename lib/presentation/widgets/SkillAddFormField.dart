@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'btn_add_item.dart';
 
 class TextFormFieldSkill extends StatelessWidget {
-  const TextFormFieldSkill({Key? key, this.controller, this.onTapAdd}) : super(key: key);
+  const TextFormFieldSkill({Key? key, this.controller, this.onTapAdd, this.hintText}) : super(key: key);
 final TextEditingController? controller;
+final String? hintText;
 final VoidCallback? onTapAdd;
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ final VoidCallback? onTapAdd;
             controller: controller,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
-              hintText: "Write skill here",
+              hintText: hintText??"Write skill here",
               hintStyle: const TextStyle(fontSize: 15),
               disabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(16.0),

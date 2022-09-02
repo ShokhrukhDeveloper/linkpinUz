@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:likpinuz/presentation/pages/my_projects_page/my_projects_page.dart';
+import 'package:likpinuz/presentation/pages/my_projects_page/widget/my_product_details_widget.dart';
 import 'package:likpinuz/presentation/pages/setting_page/setting_page.dart';
 import 'package:likpinuz/presentation/widgets/left_navigation_bar/RightNavigationBar.dart';
 
@@ -22,7 +23,8 @@ class HomePage extends StatelessWidget {
               children:  [
                 const ProfilePage(),
                 SocialNetworksPage(),
-                const MyProjectsPage()
+                const MyProjectsPage(),
+                const MyProductDetailsWidget()
               ],
             ),
           )

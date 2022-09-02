@@ -72,7 +72,6 @@ class _SkillWidgetState extends State<SkillWidget> {
           skills.add(controller.text);
           controller.clear();
           setState(() {
-
           });
           }
         })

@@ -9,10 +9,25 @@ class AppTextStyle{
     color: Colors.black,
     fontWeight: FontWeight.bold
   );
+  static const styleNameProject=TextStyle(
+    fontSize: 32,
+    color: AppColor.black,
+    fontWeight: FontWeight.bold
+  );
+  static const styleNameProjectDescription=TextStyle(
+    fontSize: 22,
+    color: AppColor.black,
+    fontWeight: FontWeight.w900
+  );
+  static const styleNameOwnerData=TextStyle(
+    fontSize: 15,
+    color: AppColor.black,
+    fontWeight: FontWeight.w200
+  );
 
   static const profileItemStyle= TextStyle(
       fontSize: 20,
-      color: Colors.black,
+      color: AppColor.black,
       fontWeight: FontWeight.w600
   );
   static const styleBlack16W600=  TextStyle(

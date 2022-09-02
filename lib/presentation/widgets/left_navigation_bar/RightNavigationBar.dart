@@ -77,6 +77,14 @@ var index=0.obs;
                 index(2);
               widget.pageController.jumpToPage(2);
             }, isExpand: _isOpened.value,),
+            MenuItem(
+              svgAssetName: 'assets/svg_icons/ic_projects.svg',
+              nameItem: 'Loyihlar',
+              isCurrent: index.value==2,
+              onTap: () {
+                index(2);
+              widget.pageController.jumpToPage(3);
+            }, isExpand: _isOpened.value,),
 
 
           ],
