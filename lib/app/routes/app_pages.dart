@@ -5,17 +5,13 @@ import 'package:likpinuz/presentation/pages/login_page/login_page.dart';
 import 'package:likpinuz/presentation/pages/signUp/sign_up_page.dart';
 import '../../presentation/pages/home/home_page.dart';
 
-class AppPages
-{
-  static  List<GetPage> pages=[
+class AppPages {
+  static List<GetPage> pages = [
+    GetPage(name: "/", page: () => const LoginPage(), binding: AuthBinding()),
     GetPage(
-        name: "/",
-        page:()=>const AuthPage(),
-        binding: AuthBinding()),
-    GetPage(
-        name: AppRoutes.home,
-        page:()=> HomePage(),
-        // binding: AuthBinding()
+      name: AppRoutes.home,
+      page: () => HomePage(),
+      // binding: AuthBinding()
     ),
     GetPage(
         name: AppRoutes.signUp,

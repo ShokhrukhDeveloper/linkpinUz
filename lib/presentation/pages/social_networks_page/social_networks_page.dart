@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:likpinuz/app/config/AppTextStyle.dart';
 import 'package:likpinuz/app/config/app_colors.dart';
 import 'package:likpinuz/presentation/pages/social_networks_page/widgets/colors_picker_button.dart';
 import 'package:likpinuz/presentation/widgets/CustomButton.dart';
 import 'package:likpinuz/presentation/widgets/btn_add_item.dart';
 import 'package:likpinuz/presentation/widgets/custom_text_field.dart';
-
 import '../../widgets/ColorPickerAlertDialog.dart';
 import '../../widgets/IconPickerW/IconPickerAlertDialog.dart';
 import '../../widgets/SocialNetworkLinkWidget.dart';
