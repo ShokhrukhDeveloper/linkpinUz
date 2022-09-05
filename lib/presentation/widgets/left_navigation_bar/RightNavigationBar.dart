@@ -53,30 +53,30 @@ var index=0.obs;
               },),
             const SizedBox(height: 40,),
 
-            // MenuItem(
-            //   svgAssetName: 'assets/svg_icons/ic_profile.svg',
+            MenuItem(
+              svgAssetName: 'assets/svg_icons/ic_profile.svg',
 
-            //   nameItem: 'Profile',
-            //   isCurrent: index.value==0, onTap: () {
-            //   index(0);
-            //   widget.pageController.jumpToPage(0);
-            // }, isExpand: _isOpened.value,),
-            // MenuItem(
-            //   svgAssetName: 'assets/svg_icons/ic_setting.svg',
-            //   nameItem: 'Akkaunt',
-            //   isCurrent: index.value==1,
-            //   onTap: () {
-            //     index(1);
-            //   widget.pageController.jumpToPage(1);},
-            //   isExpand: _isOpened.value,),
-            // MenuItem(
-            //   svgAssetName: 'assets/svg_icons/ic_projects.svg',
-            //   nameItem: 'Loyihlar',
-            //   isCurrent: index.value==2,
-            //   onTap: () {
-            //     index(2);
-            //   widget.pageController.jumpToPage(2);
-            // }, isExpand: _isOpened.value,),
+              nameItem: 'Profile',
+              isCurrent: index.value==0, onTap: () {
+              index(0);
+              widget.pageController.jumpToPage(0);
+            }, isExpand: _isOpened.value,),
+            MenuItem(
+              svgAssetName: 'assets/svg_icons/ic_setting.svg',
+              nameItem: 'Akkaunt',
+              isCurrent: index.value==1,
+              onTap: () {
+                index(1);
+              widget.pageController.jumpToPage(1);},
+              isExpand: _isOpened.value,),
+            MenuItem(
+              svgAssetName: 'assets/svg_icons/ic_projects.svg',
+              nameItem: 'Loyihlar',
+              isCurrent: index.value==2,
+              onTap: () {
+                index(2);
+              widget.pageController.jumpToPage(2);
+            }, isExpand: _isOpened.value,),
             // MenuItem(
             //   svgAssetName: 'assets/svg_icons/ic_projects.svg',
             //   nameItem: 'Loyihlar',

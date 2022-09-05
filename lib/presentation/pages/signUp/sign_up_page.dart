@@ -61,6 +61,50 @@ class _SignUpPageState extends State<SignUpPage> {
                               //? Text (Log In Now)
                               TextButton(
                                   onPressed: () {},
+                                //? Text (Log In Now)
+                                TextButton(
+                                    onPressed: () {},
+                                    child: const Text(
+                                      "Log In Now",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          color: Color(0xff1D71B8)),
+                                    ))
+                              ],
+                            ),
+                            //? Text Editing Controller (Email)
+                            _textFormField(
+                              context: context,
+                              controller: emailController,
+                              hintText: "Email",
+                            ),
+                            //? Text Editing Password (Password)
+                            _textFormField(
+                              context: context,
+                              controller: emailController,
+                              hintText: "Password",
+                            ),
+                            //? Text Editing Confirm password (Confirm password)
+                            _textFormField(
+                              context: context,
+                              controller: emailController,
+                              hintText: "Confirm password",
+                            ),
+                            //? Eleveted Button (Continue)
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: const Color(0xff1D71B8),
+                                    fixedSize: const Size(134, 44),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                  Get.toNamed(AppRoutes.home);
+                                  },
                                   child: const Text(
                                     "Log In Now",
                                     style: TextStyle(

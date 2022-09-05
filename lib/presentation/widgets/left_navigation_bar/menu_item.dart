@@ -4,7 +4,12 @@ import 'package:likpinuz/app/config/AppTextStyle.dart';
 import 'package:likpinuz/app/config/app_colors.dart';
 
 class MenuItem extends StatelessWidget {
-  const MenuItem({Key? key,  required this.onTap, required this.isCurrent, required this.nameItem, required this.svgAssetName, required this.isExpand}) : super(key: key);
+  const MenuItem({Key? key,
+    required this.onTap,
+    required this.isCurrent,
+    required this.nameItem,
+    required this.svgAssetName,
+    required this.isExpand}) : super(key: key);
   final String nameItem;
   final String svgAssetName;
   final VoidCallback onTap;
